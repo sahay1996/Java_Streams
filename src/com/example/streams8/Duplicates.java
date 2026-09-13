@@ -7,9 +7,9 @@ import java.util.stream.Collectors;
 public class Duplicates {
 
 	public static void main(String[] args) {
-		List<String> names = Arrays.asList("Rahul", "Amit", "Priya", "Rahul", "Sneha", "Amit", "Vikram", "Priya");
+		List<String> names = Arrays.asList("Rahul","Rahul", "Amit", "Priya", "Rahul", "Sneha", "Amit", "Vikram", "Priya");
 		Set<String> set = new HashSet<>();
-		List<String> duplicateElements = names.stream().filter(w->!set.add(w)).collect(Collectors.toList());
+		List<String> duplicateElements = names.stream().filter(w->!set.add(w)).distinct().collect(Collectors.toList());
 		System.out.println(duplicateElements);
 	}
 
