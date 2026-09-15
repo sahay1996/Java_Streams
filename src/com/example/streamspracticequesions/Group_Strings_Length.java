@@ -11,8 +11,8 @@ public class Group_Strings_Length {
 		List<String> names = Arrays.asList("Ashish", "Rahul", "Priya", "Amit", "Sneha", "Vikram", "Neha", "Rohit",
 				"Ankit", "Pooja", "Rahul", "Ashish", "Karan", "Meena", "Arjun", "Sneha", "Vivek", "Riya", "Amit",
 				"Suresh", "Kavya", "Rohit", "Nisha", "Arjun", "Manoj");
-		Map<Integer, List<String>> filteredNames = names.stream().distinct().collect(Collectors.groupingBy(n->n.length()));
-		System.out.println("Filtered names are : "+filteredNames);
+	Map<Object, List<String>> string_By_Length = 	names.stream().distinct().collect(Collectors.groupingBy(w->w.length()));
+	System.out.println(string_By_Length);
 	}
 
 }

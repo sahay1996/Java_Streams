@@ -8,12 +8,10 @@ import java.util.stream.Collectors;
 public class Frq_By_Ciites {
 
 	public static void main(String[] args) {
-		List<String> cities = Arrays.asList("Bangalore", "Mumbai", "Chennai", "Bangalore", "Delhi", "Pune", "Mumbai",
-				"Hyderabad", "Bangalore", "Chennai", "Pune", "Delhi", "Mumbai", "Bangalore", "Kolkata", "Chennai",
-				"Hyderabad", "Pune", "Bangalore", "Mumbai", "Delhi", "Chennai", "Bangalore", "Pune", "Hyderabad");
-		Map<String, Long> citiesFreq = 	cities.stream().collect(Collectors.groupingBy(city->city,Collectors.counting()));
-		System.out.println("Cities Frequency = : "+citiesFreq);
-		
+		List<String> cities = Arrays.asList("Bangalore", "Mumbai", "Chennai",  "Delhi", "Pune",
+				"Hyderabad",  "Kolkata");
+		Map<Object, Long> filteredCities =  cities.stream().distinct().collect(Collectors.groupingBy(w->w,Collectors.counting()));
+		System.out.println(filteredCities);
 	}
 
 }
